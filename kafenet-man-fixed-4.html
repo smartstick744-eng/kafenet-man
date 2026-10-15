@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>کافی‌نت من</title>
+<style>
+*{box-sizing:border-box}:root{--bg:#07111f;--card:rgba(255,255,255,.09);--text:#fff;--muted:#aebbd0;--blue:#00c6ff;--blue2:#0072ff;--green:#00c896;--danger:#ff5577}
+body{margin:0;min-height:100vh;font-family:Tahoma,Arial,sans-serif;background:radial-gradient(circle at top right,#123c72 0,#07111f 45%,#050b15 100%);color:var(--text)}
+button,input,textarea,select{font-family:inherit}.app{width:100%;max-width:520px;min-height:100vh;margin:auto;padding:18px}.screen{display:none;animation:fade .2s ease}.screen.active{display:block}@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.logo{width:82px;height:82px;margin:28px auto 18px;border-radius:25px;display:flex;align-items:center;justify-content:center;font-size:42px;background:linear-gradient(135deg,var(--blue),var(--blue2));box-shadow:0 15px 45px #0072ff4d}
+h1{text-align:center;margin:8px 0;font-size:27px}h2{margin:8px 0 18px}p{line-height:1.9}.muted,.small{color:var(--muted)}.small{font-size:12px}.center{text-align:center}
+.card{background:var(--card);border:1px solid #ffffff1a;border-radius:22px;padding:18px;margin-bottom:14px;box-shadow:0 12px 35px #0003;backdrop-filter:blur(12px)}
+.btn{width:100%;border:0;border-radius:15px;padding:15px;margin-top:11px;color:#fff;font-size:15px;font-weight:bold;background:linear-gradient(135deg,var(--blue),var(--blue2));cursor:pointer}.btn.secondary{background:#ffffff16}.btn.green{background:linear-gradient(135deg,#00b09b,var(--green))}.btn.red{background:linear-gradient(135deg,#ff5577,#cf244d)}
+input,textarea,select{width:100%;padding:14px;border-radius:14px;border:1px solid #ffffff22;outline:none;background:#0004;color:#fff;font-size:15px;margin:7px 0 12px}textarea{min-height:120px;resize:vertical}select option{color:#000}.device{direction:ltr;text-align:center;font-weight:bold;letter-spacing:1px;font-size:17px}
+.status{padding:12px;border-radius:14px;background:#0004;text-align:center;line-height:1.9;margin-top:12px;overflow-wrap:anywhere}
+.home-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:5px 0 15px}.brand{display:flex;align-items:center;gap:10px}.brand-logo{width:48px;height:48px;border-radius:15px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--blue),var(--blue2));font-size:24px}.clock{text-align:left;color:var(--muted);font-size:11px;line-height:1.8}
+.subscription{background:linear-gradient(135deg,#00c6ff2e,#0072ff2e);border:1px solid #00c6ff40}.days{font-size:28px;font-weight:bold;color:#6ee7ff}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}.service{border:1px solid #ffffff17;border-radius:19px;padding:16px 12px;min-height:120px;color:white;background:var(--card);text-align:right;cursor:pointer}.service .icon{font-size:29px;margin-bottom:9px}.service b{display:block;font-size:14px}.service span{display:block;margin-top:7px;color:var(--muted);font-size:11px;line-height:1.6}
+.topbar{display:flex;align-items:center;gap:10px;margin-bottom:15px}.back{width:44px;height:44px;border:0;border-radius:14px;background:#ffffff17;color:#fff;font-size:20px;flex-shrink:0}
+.sheet-bg{position:fixed;inset:0;background:#000a;display:none;align-items:flex-end;z-index:50}.sheet-bg.show{display:flex}.sheet{width:100%;max-width:520px;margin:auto;background:#0b1930;border-radius:25px 25px 0 0;padding:20px;max-height:85vh;overflow:auto}
+.link-btn{display:block;width:100%;padding:14px;margin-top:9px;border:0;border-radius:14px;background:#ffffff14;color:#fff;text-align:center;cursor:pointer;font-size:14px}
+.preview-list{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.preview{background:#ffffff0e;padding:8px;border-radius:14px}.preview img{width:100%;height:125px;object-fit:cover;border-radius:9px}.preview button{width:100%;margin-top:6px;padding:8px;border:0;border-radius:9px;background:#ffffff18;color:white}
+.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:#101d32;border:1px solid #ffffff25;padding:12px 16px;border-radius:14px;display:none;z-index:100;max-width:92%;text-align:center}.toast.show{display:block}.faq{padding:12px 0;border-bottom:1px solid #ffffff14}.footer{text-align:center;color:#70809a;font-size:11px;margin:24px 0 10px}
+@media(max-width:380px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="app">
+<section id="welcome" class="screen">
+ <div class="logo">☕</div><h1>کافی‌نت من</h1>
+ <div class="card center"><p>بسیاری از خدمات کافی‌نت را از داخل گوشی انجام بده.</p><p class="muted">سریع، ساده و همیشه در دسترس</p></div>
+ <button class="btn" onclick="openActivation()">🚀 ورود به برنامه</button>
+ <button class="btn secondary" onclick="show('device')">📱 مشاهده کد دستگاه</button>
+ <button class="btn secondary" onclick="show('adminLogin')">🛠️ پنل مدیریت مدیر</button>
+</section>
+
+<section id="device" class="screen">
+ <div class="logo">📱</div><h1>کد دستگاه شما</h1><div class="card">
+ <p class="center muted">این کد مخصوص همین مرورگر/دستگاه است. آن را برای مدیر برنامه ارسال کنید.</p>
+ <input id="deviceCode" class="device" readonly>
+ <button class="btn green" onclick="copyDevice()">📋 کپی کد دستگاه</button><button class="btn secondary" onclick="shareDevice()">📤 ارسال کد</button><button class="btn secondary" onclick="show('welcome')">برگشت</button>
+ </div>
+</section>
+
+<section id="activation" class="screen">
+ <div class="logo">🔐</div><h1>فعال‌سازی اشتراک</h1><div class="card">
+ <p class="muted center">کد فعال‌سازی دریافتی از مدیر را وارد کنید.</p>
+ <textarea id="activationCode" placeholder="کد فعال‌سازی را اینجا وارد کنید" dir="ltr" style="min-height:85px"></textarea>
+ <button class="btn" onclick="activate()">🔓 فعال‌سازی اشتراک</button><button class="btn secondary" onclick="show('device')">📱 کد دستگاه من</button><button class="btn secondary" onclick="show('welcome')">برگشت</button>
+ <div id="activationStatus" class="status">آماده فعال‌سازی</div>
+</div></section>
+
+<section id="adminLogin" class="screen">
+ <div class="topbar"><button class="back" onclick="show('welcome')">‹</button><h2>🛠️ ورود مدیر</h2></div>
+ <div class="card"><p class="muted">رمز اولیه پنل مدیر: <b>1234</b> — بعد از ورود، آن را تغییر دهید.</p>
+ <input id="adminPassword" type="password" placeholder="رمز مدیر" dir="ltr">
+ <button class="btn" onclick="adminLogin()">ورود به پنل</button><div id="adminLoginStatus" class="status"></div></div>
+</section>
+
+<section id="admin" class="screen">
+ <div class="topbar"><button class="back" onclick="show('welcome')">‹</button><h2>🛠️ پنل مدیریت اشتراک</h2></div>
+ <div class="card"><h3>ساخت کد فعال‌سازی</h3><label>کد دستگاه مشتری</label><input id="adminDevice" placeholder="CN-XXXXXX-XXXXXX" dir="ltr">
+ <label>مدت اشتراک به روز</label><input id="adminDays" type="number" min="1" max="3650" value="30" dir="ltr">
+ <button class="btn green" onclick="generateCode()">ساخت کد اشتراک</button>
+ <label>کد ساخته‌شده را برای مشتری بفرستید</label><textarea id="generatedCode" readonly dir="ltr" style="min-height:100px"></textarea>
+ <button class="btn" onclick="copyGenerated()">📋 کپی کد اشتراک</button>
+ <div class="status small">مهم: این پنل کاملاً داخل HTML است؛ رمز و الگوریتم در کد قابل مشاهده‌اند و برای فروش واقعیِ امن کافی نیستند. برای امنیت واقعی، سرور لازم است.</div>
+ </div>
+ <div class="card"><h3>تغییر رمز مدیر این دستگاه</h3><input id="newAdminPassword" type="password" placeholder="رمز جدید (حداقل 4 نویسه)" dir="ltr"><button class="btn secondary" onclick="changeAdminPassword()">تغییر رمز</button></div>
+</section>
+
+<section id="home" class="screen">
+ <div class="home-head"><div class="brand"><div class="brand-logo">☕</div><div><b>کافی‌نت من</b><div class="small">سلام 👋 خوش آمدید</div></div></div><div class="clock"><div id="persianDate">---</div><div id="clock">--:--:--</div></div></div>
+ <div class="card subscription"><div class="small">وضعیت اشتراک</div><div id="subscriptionText">در حال بررسی...</div><div class="days"><span id="daysRemaining">0</span> روز</div><div id="subscriptionDetails" class="small">---</div></div>
+ <h2>خدمات کافی‌نت</h2><div id="services" class="grid"></div><button class="btn secondary" onclick="openActivation()">🎟️ مدیریت اشتراک</button><div class="footer">کافی‌نت من • نسخه موبایل</div>
+</section>
+
+<section id="pdf" class="screen"><div class="topbar"><button class="back" onclick="goHome()">‹</button><h2>🖼️ تبدیل عکس به PDF</h2></div><div class="card"><p class="muted">تصاویر را انتخاب کنید. در پایان پنجره چاپ باز می‌شود؛ گزینه «ذخیره به‌صورت PDF» را انتخاب کنید.</p><input id="imageFiles" type="file" accept="image/*" multiple onchange="loadImages(event)"><div id="imagePreview" class="preview-list"></div><button class="btn" onclick="makePDF()">📄 ساخت PDF / چاپ</button></div></section>
+
+<section id="request" class="screen"><div class="topbar"><button class="back" onclick="goHome()">‹</button><h2>📄 فرم و درخواست</h2></div><div class="card"><label>عنوان درخواست</label><input id="requestTitle" placeholder="مثلاً درخواست پیگیری"><label>متن درخواست</label><textarea id="requestText" placeholder="متن درخواست خود را بنویسید..."></textarea><button class="btn" onclick="makeRequestPDF()">📄 ساخت درخواست PDF</button></div></section>
+
+<section id="support" class="screen"><div class="topbar"><button class="back" onclick="goHome()">‹</button><h2>🎧 پشتیبانی</h2></div><div class="card"><p class="muted">برای ارتباط، آدرس واقعی پشتیبانی خود را در کد جایگزین کنید.</p><button class="link-btn" onclick="openExternal('https://t.me/')">💬 تلگرام</button><button class="link-btn" onclick="openExternal('https://wa.me/')">🟢 واتساپ</button></div><div class="card"><h3>❓ سوالات متداول</h3><div class="faq"><b>چرا اشتراکم فعال نمی‌شود؟</b><p class="small">کد باید برای کد دستگاه همین مرورگر ساخته شده باشد.</p></div><div class="faq"><b>کد دستگاه چیست؟</b><p class="small">شناسه‌ای است که برای ساخت اشتراک استفاده می‌شود.</p></div></div></section>
+
+<section id="search" class="screen"><div class="topbar"><button class="back" onclick="goHome()">‹</button><h2>🌐 جستجوی اینترنتی</h2></div><div class="card"><input id="searchText" placeholder="عبارت مورد نظر..."><button class="btn" onclick="internetSearch()">🔎 جستجو</button><button class="link-btn" onclick="openExternal('https://www.google.com')">Google</button><button class="link-btn" onclick="openExternal('https://fa.wikipedia.org')">ویکی‌پدیای فارسی</button></div></section>
+</div>
+<div id="sheetBg" class="sheet-bg" onclick="closeSheet()"><div class="sheet" onclick="event.stopPropagation()"><h2 id="sheetTitle">خدمت</h2><div id="sheetContent"></div><button class="btn secondary" onclick="closeSheet()">بستن</button></div></div><div id="toast" class="toast"></div>
+
+<script>
+"use strict";
+/* این نسخه برای کارکرد در مرورگر و WebView ساده شده است.
+   توجه: فعال‌سازی کاملاً آفلاین و داخل HTML امنیت سروری ندارد. */
+const SECRET="KAFENET_MAN_2026_SECRET_928374";
+const $=id=>document.getElementById(id);
+function createDevice(){const c="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";const part=()=>Array.from({length:6},()=>c[Math.floor(Math.random()*c.length)]).join("");return "CN-"+part()+"-"+part();}
+let DEVICE=localStorage.getItem("kafenet_device");
+if(!DEVICE){DEVICE=createDevice();localStorage.setItem("kafenet_device",DEVICE);}
+$("deviceCode").value=DEVICE;
+function show(id){document.querySelectorAll(".screen").forEach(x=>x.classList.remove("active"));const el=$(id);if(el)el.classList.add("active");window.scrollTo(0,0);}
+function base64urlEncode(s){const bytes=new TextEncoder().encode(s);let bin="";bytes.forEach(b=>bin+=String.fromCharCode(b));return btoa(bin).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,"");}
+function base64urlDecode(s){s=s.replace(/-/g,"+").replace(/_/g,"/");while(s.length%4)s+="=";const bin=atob(s);const bytes=Uint8Array.from(bin,c=>c.charCodeAt(0));return new TextDecoder().decode(bytes);}
+function signature(text){let h=2166136261;const s=SECRET+"|"+text;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619);}return (h>>>0).toString(16).padStart(8,"0");}
+function makeActivationCode(device,days){const payload=JSON.stringify({device,expiresAt:Date.now()+days*86400000});return base64urlEncode(payload)+"."+signature(payload);}
+function setStatus(text){$("activationStatus").textContent=text;}
+async function checkSubscription(){
+ const raw=localStorage.getItem("kafenet_subscription");
+ if(!raw){$("subscriptionText").textContent="اشتراک فعال نیست";$("daysRemaining").textContent="0";$("subscriptionDetails").textContent="برای فعال‌سازی، کد اشتراک را وارد کنید.";return false;}
+ try{const saved=JSON.parse(raw);if(saved.device!==DEVICE||signature(saved.payloadText)!==saved.signature){localStorage.removeItem("kafenet_subscription");throw Error("کد اشتراک معتبر نیست");}
+ const p=JSON.parse(saved.payloadText);if(p.device!==DEVICE||!Number.isFinite(Number(p.expiresAt))||Number(p.expiresAt)<=Date.now()){ $("subscriptionText").textContent="اشتراک منقضی شده";$("daysRemaining").textContent="0";$("subscriptionDetails").textContent="برای ادامه، اشتراک جدید فعال کنید.";return false;}
+ $("subscriptionText").textContent="اشتراک شما فعال است ✅";$("daysRemaining").textContent=Math.ceil((p.expiresAt-Date.now())/86400000);$("subscriptionDetails").textContent="تا "+new Date(p.expiresAt).toLocaleDateString("fa-IR")+" اعتبار دارد";return true;
+ }catch(e){$("subscriptionText").textContent="اشتراک فعال نیست";$("daysRemaining").textContent="0";$("subscriptionDetails").textContent="کد اشتراک را دوباره بررسی کنید.";return false;}
+}
+async function activate(){const code=$("activationCode").value.trim().replace(/\s/g,"");if(!code){setStatus("❌ کد فعال‌سازی را وارد کنید.");return;}setStatus("⏳ در حال بررسی کد...");try{const parts=code.split(".");if(parts.length!==2)throw Error("فرمت کد صحیح نیست.");const payloadText=base64urlDecode(parts[0]);if(signature(payloadText)!==parts[1])throw Error("کد فعال‌سازی معتبر نیست.");const p=JSON.parse(payloadText);if(p.device!==DEVICE)throw Error("این کد برای دستگاه دیگری ساخته شده است.");if(!Number.isFinite(Number(p.expiresAt))||Number(p.expiresAt)<=Date.now())throw Error("این اشتراک منقضی شده است.");localStorage.setItem("kafenet_subscription",JSON.stringify({device:DEVICE,payloadText,signature:parts[1]}));setStatus("✅ اشتراک با موفقیت فعال شد.");await checkSubscription();setTimeout(()=>{show("home");renderServices();},500);}catch(e){setStatus("❌ "+e.message);}}
+async function goHome(){if(await checkSubscription()){show("home");renderServices();}else show("activation");}
+async function openActivation(){if(await checkSubscription()){show("home");renderServices();}else show("activation");}
+async function copyText(text){try{await navigator.clipboard.writeText(text);toast("✅ کپی شد");}catch(e){const t=document.createElement("textarea");t.value=text;document.body.appendChild(t);t.select();document.execCommand("copy");t.remove();toast("✅ کپی شد");}}
+function copyDevice(){copyText(DEVICE)}
+async function shareDevice(){const text="کد دستگاه من در کافی‌نت من:\n"+DEVICE;if(navigator.share){try{await navigator.share({title:"کد دستگاه کافی‌نت من",text});}catch(e){}}else copyDevice();}
+function openExternal(url){try{const w=window.open(url,"_blank");if(!w)window.location.href=url;}catch(e){window.location.href=url;}}
+const services=[
+{id:"internet",icon:"🌐",title:"خدمات اینترنتی",desc:"جستجو و دسترسی سریع",type:"local"},
+{id:"eblagh",icon:"📩",title:"ابلاغیه‌ها",desc:"خدمات ابلاغ الکترونیکی",links:[["سامانه ابلاغ","https://eblagh.adliran.ir"],["سامانه ثنا","https://sana.adliran.ir"]]},
+{id:"judicial",icon:"⚖️",title:"خدمات قضایی",desc:"سامانه‌های خدمات قضایی",links:[["خدمات قضایی","https://my.adliran.ir"],["عدل ایران","https://adliran.ir"],["ثنا","https://sana.adliran.ir"]]},
+{id:"government",icon:"🏛️",title:"خدمات دولتی",desc:"پنجره ملی خدمات دولت",links:[["پنجره ملی خدمات دولت","https://my.gov.ir"]]},
+{id:"identity",icon:"🪪",title:"خدمات هویتی",desc:"خدمات ثبت احوال",links:[["ثبت احوال","https://sabteahval.ir"],["سامانه سهیم","https://sahim.sabteahval.ir"]]},
+{id:"appointment",icon:"📅",title:"گرفتن نوبت",desc:"سامانه‌های نوبت‌دهی",links:[["پنجره ملی خدمات دولت","https://my.gov.ir"]]},
+{id:"property",icon:"🏠",title:"خدمات املاک",desc:"سامانه خدمات املاک",links:[["املاک و اسکان","https://amlak.mrud.ir"]]},
+{id:"forms",icon:"📄",title:"فرم‌ها و مدارک",desc:"ساخت درخواست",type:"local"},
+{id:"pdf",icon:"📑",title:"تبدیل عکس به PDF",desc:"ساخت PDF از تصاویر",type:"local"},
+{id:"bills",icon:"🧾",title:"پرداخت قبوض",desc:"دسترسی به خدمات قبوض",links:[["پنجره خدمات دولت","https://my.gov.ir"]]},
+{id:"support",icon:"🎧",title:"پشتیبانی",desc:"راهنما و ارتباط",type:"local"}];
+function renderServices(){const box=$("services");box.innerHTML="";services.forEach(s=>{const b=document.createElement("button");b.className="service";b.innerHTML='<div class="icon">'+s.icon+'</div><b>'+s.title+'</b><span>'+s.desc+'</span>';b.onclick=()=>openService(s);box.appendChild(b);});}
+function openService(s){if(s.id==="internet")return show("search");if(s.id==="pdf")return show("pdf");if(s.id==="forms")return show("request");if(s.id==="support")return show("support");openSheet(s.title,s.links||[]);}
+function openSheet(title,links){$("sheetTitle").textContent=title;$("sheetContent").innerHTML="";links.forEach(item=>{const b=document.createElement("button");b.className="link-btn";b.textContent="🔗 "+item[0];b.onclick=()=>openExternal(item[1]);$("sheetContent").appendChild(b);});$("sheetBg").classList.add("show");}
+function closeSheet(){$("sheetBg").classList.remove("show");}
+function internetSearch(){const q=$("searchText").value.trim();if(!q)return toast("⚠️ عبارت جستجو را وارد کن");openExternal("https://www.google.com/search?q="+encodeURIComponent(q));}
+let selectedImages=[];
+function loadImages(e){selectedImages=Array.from(e.target.files||[]);renderImages();}
+function renderImages(){const box=$("imagePreview");box.innerHTML="";selectedImages.forEach((file,i)=>{const div=document.createElement("div");div.className="preview";const img=document.createElement("img");img.alt=file.name;const r=new FileReader();r.onload=e=>img.src=e.target.result;r.readAsDataURL(file);div.appendChild(img);const name=document.createElement("div");name.className="small";name.textContent=file.name;div.appendChild(name);const del=document.createElement("button");del.textContent="🗑 حذف";del.onclick=()=>{selectedImages.splice(i,1);renderImages();};div.appendChild(del);box.appendChild(div);});}
+function makePDF(){if(!selectedImages.length)return toast("⚠️ حداقل یک تصویر انتخاب کن");const w=window.open("","_blank");if(!w){toast("مرورگر اجازه باز کردن پنجره چاپ را نداد؛ مجوز پنجره‌ها را فعال کن.");return;}w.document.write('<!doctype html><html lang="fa" dir="rtl"><head><meta charset="utf-8"><title>تصاویر PDF</title><style>body{font-family:Tahoma;text-align:center}img{display:block;max-width:100%;max-height:95vh;object-fit:contain;margin:0 auto;page-break-after:always} @media print{img{page-break-after:always}}</style></head><body>');selectedImages.forEach(f=>{const u=URL.createObjectURL(f);w.document.write('<img src="'+u+'">');});w.document.write('<script>window.onload=()=>setTimeout(()=>window.print(),500)<\/script></body></html>');w.document.close();toast("در پنجره چاپ، «ذخیره به‌صورت PDF» را انتخاب کن.");}
+function makeRequestPDF(){const title=$("requestTitle").value.trim(),text=$("requestText").value.trim();if(!title||!text)return toast("⚠️ عنوان و متن درخواست را وارد کن");const w=window.open("","_blank");if(!w)return toast("اجازه باز شدن پنجره چاپ را بده.");const safe=s=>s.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));w.document.write('<!doctype html><html lang="fa" dir="rtl"><meta charset="utf-8"><title>درخواست</title><style>body{font-family:Tahoma;line-height:2;padding:35px}h2{text-align:center}p{white-space:pre-wrap}</style><h2>'+safe(title)+'</h2><p>'+safe(text)+'</p><hr><small>تهیه شده با کافی‌نت من</small><script>window.onload=()=>setTimeout(()=>window.print(),300)<\/script></html>');w.document.close();}
+function adminLogin(){const saved=localStorage.getItem("kafenet_admin_password")||"1234";if($("adminPassword").value===saved){$("adminLoginStatus").textContent="ورود موفق";show("admin");}else $("adminLoginStatus").textContent="❌ رمز مدیر اشتباه است.";}
+function generateCode(){const device=$("adminDevice").value.trim().toUpperCase();const days=Number($("adminDays").value);if(!/^CN-[A-Z0-9]{6}-[A-Z0-9]{6}$/.test(device))return toast("کد دستگاه را درست وارد کن؛ از مشتری کپی بگیر.");if(!Number.isInteger(days)||days<1||days>3650)return toast("مدت اشتراک باید بین ۱ تا ۳۶۵۰ روز باشد.");$("generatedCode").value=makeActivationCode(device,days);toast("✅ کد ساخته شد");}
+function copyGenerated(){if(!$("generatedCode").value)return toast("اول کد بساز");copyText($("generatedCode").value);}
+function changeAdminPassword(){const p=$("newAdminPassword").value;if(p.length<4)return toast("رمز باید حداقل ۴ نویسه باشد");localStorage.setItem("kafenet_admin_password",p);$("newAdminPassword").value="";toast("رمز مدیر در همین مرورگر تغییر کرد");}
+function toast(text){const el=$("toast");el.textContent=text;el.classList.add("show");clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>el.classList.remove("show"),2600);}
+function updateDateTime(){const now=new Date();$("persianDate").textContent=now.toLocaleDateString("fa-IR",{weekday:"long",year:"numeric",month:"long",day:"numeric"});$("clock").textContent=now.toLocaleTimeString("fa-IR",{hour:"2-digit",minute:"2-digit",second:"2-digit"});}
+setInterval(updateDateTime,1000);updateDateTime();
+(async()=>{if(await checkSubscription()){show("home");renderServices();}else show("welcome");})();
+</script>
+</body>
+</html>
